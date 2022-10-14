@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\Wissel\OneDrive\Desktop\università\MAGISTRALE\Ing.Dati\Progetti-Repo\Ingengeria-Dei-dati--Progetti\.metadata\.plugins\org.eclipse.jdt.core
+1324272386.index
+3413725848.index
+1865797976.index
