@@ -1,8 +1,13 @@
 package homework1.module;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+
+
+import org.apache.lucene.store.FSDirectory;
 
 /**
  * This class is specialized in the creation of the index
@@ -14,14 +19,15 @@ import java.util.Map;
  */
 public class IndexCreator 
 {
-	
-	private static final String indexPath="";	//where to save Luceene Index
+	private Path path;
+	private static final String indexPath="homework1.target/index";	//where to save Luceene Index
 	private static final String corpusPath="C:/Users/Wissel/OneDrive/Desktop/università/MAGISTRALE/Ing.Dati/Homeworks/Homework2/corpus";
 	private static final String titleField="titolo";
 	private static final String contentField="contenuto";
 	
 	public IndexCreator()
-	{
+	{	
+		this.path=Paths.get(indexPath);
 		
 	}
 	
