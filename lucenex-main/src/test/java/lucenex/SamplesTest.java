@@ -258,11 +258,11 @@ public class SamplesTest {
     }
 
     private void indexDocs(Directory directory, Codec codec) throws IOException {
-        Analyzer defaultAnalyzer = new StandardAnalyzer();
-        CharArraySet stopWords = new CharArraySet(Arrays.asList("in", "dei", "di"), true);
-        Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
-        perFieldAnalyzers.put("contenuto", new StandardAnalyzer(stopWords));
-        perFieldAnalyzers.put("titolo", new WhitespaceAnalyzer());
+        Analyzer defaultAnalyzer = new StandardAnalyzer();		//creazione di un Analyzer standard
+        CharArraySet stopWords = new CharArraySet(Arrays.asList("in", "dei", "di"), true);	//charset di token da non utilizzare
+        Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();		//creazione di un map analyzer 
+        perFieldAnalyzers.put("contenuto", new StandardAnalyzer(stopWords));	//contenuto verra tokenizzato seguendo la standardAnalyzer 
+        perFieldAnalyzers.put("titolo", new WhitespaceAnalyzer());			//titolo tokenizzato in base a gli spazi vuoti
 
         Analyzer analyzer = new PerFieldAnalyzerWrapper(defaultAnalyzer, perFieldAnalyzers);
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
