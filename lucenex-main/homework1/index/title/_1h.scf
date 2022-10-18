@@ -1,0 +1,434 @@
+cfs entry for: _1h.fld
+doc 0
+  field 0
+    name titolo
+    type string
+    value american Pie
+doc 1
+  field 0
+    name titolo
+    type string
+    value Ant colony optimization algorithms
+doc 2
+  field 0
+    name titolo
+    type string
+    value big data
+doc 3
+  field 0
+    name titolo
+    type string
+    value CAP Theorem
+doc 4
+  field 0
+    name titolo
+    type string
+    value Computer Vision
+doc 5
+  field 0
+    name titolo
+    type string
+    value congratulations
+doc 6
+  field 0
+    name titolo
+    type string
+    value Convolutional Neural Networks
+doc 7
+  field 0
+    name titolo
+    type string
+    value economics
+doc 8
+  field 0
+    name titolo
+    type string
+    value highway to hell
+doc 9
+  field 0
+    name titolo
+    type string
+    value How i met your mother
+doc 10
+  field 0
+    name titolo
+    type string
+    value How To Become A Data Engineer
+doc 11
+  field 0
+    name titolo
+    type string
+    value How To Become A Data Scientist
+doc 12
+  field 0
+    name titolo
+    type string
+    value How To Behave In The Office
+doc 13
+  field 0
+    name titolo
+    type string
+    value Inflation
+doc 14
+  field 0
+    name titolo
+    type string
+    value Information Retrival
+doc 15
+  field 0
+    name titolo
+    type string
+    value Infrared Vision
+doc 16
+  field 0
+    name titolo
+    type string
+    value jhonny B Good
+doc 17
+  field 0
+    name titolo
+    type string
+    value Naive Bayes classifier
+doc 18
+  field 0
+    name titolo
+    type string
+    value otsu
+doc 19
+  field 0
+    name titolo
+    type string
+    value SVM
+doc 20
+  field 0
+    name titolo
+    type string
+    value The Office
+doc 21
+  field 0
+    name titolo
+    type string
+    value What Is A Data Engineer
+END
+checksum 00000000000492832731
+cfs entry for: _1h.inf
+number of fields 1
+  name titolo
+  number 0
+  index options DOCS_AND_FREQS_AND_POSITIONS
+  term vectors false
+  payloads false
+  norms true
+  doc values NONE
+  doc values gen -1
+  attributes 0
+  data dimensional count 0
+  index dimensional count 0
+  dimensional num bytes 0
+  vector number of dimensions 0
+  vector encoding FLOAT32
+  vector similarity EUCLIDEAN
+  soft-deletes false
+checksum 00000000002294684159
+cfs entry for: _1h.len
+field titolo
+  type NUMERIC
+  minvalue 1
+  pattern 0
+1
+T
+3
+T
+1
+T
+1
+T
+1
+T
+0
+T
+2
+T
+0
+T
+1
+T
+4
+T
+5
+T
+5
+T
+5
+T
+0
+T
+1
+T
+1
+T
+2
+T
+2
+T
+0
+T
+0
+T
+1
+T
+4
+T
+END
+checksum 00000000001024838719
+cfs entry for: _1h.pst
+field titolo
+  term a
+    doc 10
+      freq 1
+      pos 3
+    doc 11
+      freq 1
+      pos 3
+    doc 21
+      freq 1
+      pos 2
+  term algorithms
+    doc 1
+      freq 1
+      pos 3
+  term american
+    doc 0
+      freq 1
+      pos 0
+  term ant
+    doc 1
+      freq 1
+      pos 0
+  term b
+    doc 16
+      freq 1
+      pos 1
+  term bayes
+    doc 17
+      freq 1
+      pos 1
+  term become
+    doc 10
+      freq 1
+      pos 2
+    doc 11
+      freq 1
+      pos 2
+  term behave
+    doc 12
+      freq 1
+      pos 2
+  term big
+    doc 2
+      freq 1
+      pos 0
+  term cap
+    doc 3
+      freq 1
+      pos 0
+  term classifier
+    doc 17
+      freq 1
+      pos 2
+  term colony
+    doc 1
+      freq 1
+      pos 1
+  term computer
+    doc 4
+      freq 1
+      pos 0
+  term congratulations
+    doc 5
+      freq 1
+      pos 0
+  term convolutional
+    doc 6
+      freq 1
+      pos 0
+  term data
+    doc 2
+      freq 1
+      pos 1
+    doc 10
+      freq 1
+      pos 4
+    doc 11
+      freq 1
+      pos 4
+    doc 21
+      freq 1
+      pos 3
+  term economics
+    doc 7
+      freq 1
+      pos 0
+  term engineer
+    doc 10
+      freq 1
+      pos 5
+    doc 21
+      freq 1
+      pos 4
+  term good
+    doc 16
+      freq 1
+      pos 2
+  term hell
+    doc 8
+      freq 1
+      pos 2
+  term highway
+    doc 8
+      freq 1
+      pos 0
+  term how
+    doc 9
+      freq 1
+      pos 0
+    doc 10
+      freq 1
+      pos 0
+    doc 11
+      freq 1
+      pos 0
+    doc 12
+      freq 1
+      pos 0
+  term i
+    doc 9
+      freq 1
+      pos 1
+  term in
+    doc 12
+      freq 1
+      pos 3
+  term inflation
+    doc 13
+      freq 1
+      pos 0
+  term information
+    doc 14
+      freq 1
+      pos 0
+  term infrared
+    doc 15
+      freq 1
+      pos 0
+  term is
+    doc 21
+      freq 1
+      pos 1
+  term jhonny
+    doc 16
+      freq 1
+      pos 0
+  term met
+    doc 9
+      freq 1
+      pos 2
+  term mother
+    doc 9
+      freq 1
+      pos 4
+  term naive
+    doc 17
+      freq 1
+      pos 0
+  term networks
+    doc 6
+      freq 1
+      pos 2
+  term neural
+    doc 6
+      freq 1
+      pos 1
+  term office
+    doc 12
+      freq 1
+      pos 5
+    doc 20
+      freq 1
+      pos 1
+  term optimization
+    doc 1
+      freq 1
+      pos 2
+  term otsu
+    doc 18
+      freq 1
+      pos 0
+  term pie
+    doc 0
+      freq 1
+      pos 1
+  term retrival
+    doc 14
+      freq 1
+      pos 1
+  term scientist
+    doc 11
+      freq 1
+      pos 5
+  term svm
+    doc 19
+      freq 1
+      pos 0
+  term the
+    doc 12
+      freq 1
+      pos 4
+    doc 20
+      freq 1
+      pos 0
+  term theorem
+    doc 3
+      freq 1
+      pos 1
+  term to
+    doc 10
+      freq 1
+      pos 1
+    doc 11
+      freq 1
+      pos 1
+    doc 12
+      freq 1
+      pos 1
+  term vision
+    doc 4
+      freq 1
+      pos 1
+    doc 15
+      freq 1
+      pos 1
+  term what
+    doc 21
+      freq 1
+      pos 0
+  term your
+    doc 9
+      freq 1
+      pos 3
+END
+checksum 00000000002239706842
+table of contents, size: 4
+  filename: _1h.fld
+    start: 23
+    end: 1741
+  filename: _1h.inf
+    start: 1764
+    end: 2177
+  filename: _1h.len
+    start: 2200
+    end: 2375
+  filename: _1h.pst
+    start: 2398
+    end: 5304
+table of contents begins at offset: 0000000000000005304

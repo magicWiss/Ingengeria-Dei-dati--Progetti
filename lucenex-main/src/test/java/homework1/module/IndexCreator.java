@@ -13,11 +13,14 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.CharArraySet;
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
+import org.apache.lucene.analysis.core.StopFilter;
+import org.apache.lucene.analysis.core.StopFilterFactory;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceTokenizerFactory;
 import org.apache.lucene.analysis.custom.CustomAnalyzer;
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper;
 import org.apache.lucene.analysis.miscellaneous.WordDelimiterGraphFilterFactory;
+import org.apache.lucene.analysis.pattern.PatternReplaceCharFilterFactory;
 import org.apache.lucene.analysis.pattern.PatternTokenizer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.codecs.Codec;
@@ -95,13 +98,15 @@ public class IndexCreator
 
 				Document docContent= new Document();
 
-				docTitle.add(new StringField(titleField,title,Field.Store.YES));
+				docTitle.add(new TextField(titleField,title,Field.Store.YES));
 
-				//docContent.add(new TextField(contentField,content,Field.Store.NO));
+				docContent.add(new TextField(contentField,content,Field.Store.NO));
 
-				//writerContent.addDocument(docContent);
+				writerContent.addDocument(docContent);
+				
 
 				writerTitle.addDocument(docTitle);
+				
 
 
 			}
@@ -110,9 +115,11 @@ public class IndexCreator
 
 		}
 		writerContent.commit();
+		writerTitle.commit();
+		
 		writerContent.close();
 
-		writerTitle.commit();
+		
 		writerTitle.close();
 
 	}
@@ -121,13 +128,16 @@ public class IndexCreator
 	private IndexWriter createWriterTitle(Codec codec) throws IOException {
 		Path path = Paths.get(indexPathTitle);
 		Directory directory = FSDirectory.open(path);
+		
+		
+		Analyzer a1 = CustomAnalyzer.builder().withTokenizer(WhitespaceTokenizerFactory.class)
 
-
-		Analyzer a = CustomAnalyzer.builder().withTokenizer(WhitespaceTokenizerFactory.class)
+				.addTokenFilter(StopFilterFactory.class)
 				.addTokenFilter(LowerCaseFilterFactory.class)
 				.addTokenFilter(WordDelimiterGraphFilterFactory.class)
 				.build();
-		IndexWriterConfig config = new IndexWriterConfig(a);
+		
+		IndexWriterConfig config = new IndexWriterConfig(a1);
 		if (codec != null) {
 			config.setCodec(codec);
 		}
@@ -136,6 +146,14 @@ public class IndexCreator
 
 
 	}
+	//creates a map <term, replacment>
+	private Map<String, String> createMapOfSubTerms() 
+	{
+		Map<String,String> terms2replace=new HashMap<>();
+		terms2replace.put("pattern", "\\[\\d*\\]");
+		terms2replace.put("replacement", "");
+		return terms2replace;
+	}
 
 	//creation of the Writer index for content index
 	private IndexWriter createWriterContent(Codec codec) throws IOException 
@@ -143,8 +161,10 @@ public class IndexCreator
 		Path path = Paths.get(indexPathContent);
 		Directory directory = FSDirectory.open(path);
 
-
+		Map<String,String> patternReplacment=this.createMapOfSubTerms();
 		Analyzer a = CustomAnalyzer.builder().withTokenizer(WhitespaceTokenizerFactory.class)
+				.addCharFilter(PatternReplaceCharFilterFactory.NAME, patternReplacment)
+				.addTokenFilter(StopFilterFactory.class)
 				.addTokenFilter(LowerCaseFilterFactory.class)
 				.addTokenFilter(WordDelimiterGraphFilterFactory.class)
 				.build();
